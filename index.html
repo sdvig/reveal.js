@@ -25,6 +25,25 @@
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
+		<style>
+
+		.text-yellow-bg {
+			background-color: rgb(255, 199, 19);
+			height: 1em;
+		}
+
+		section p {
+			font-size: 1.25em;
+		}
+
+		.reveal .talk-title {
+			font-size: 2.5em;
+			margin-bottom: 2em;
+			line-height: 1.1em;
+		}
+
+		</style>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -43,16 +62,17 @@
 				</section>
 
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>WEBXP</h1>
+					<h3>WEB eXPerience</h3>
+					<br />
 					<p>
 						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
 					</p>
 				</section>
 
-				<section>
+				<!--section style="background: url(http://media.emercedesbenz.com.s3.amazonaws.com/magazine/wp-content/uploads/mercedes-benz-73734064026.jpg); background-size: 100%;">
 					<img src="lib/images/the-hero.png" alt="Down arrow">
-					<!--h2>Heads Up</h2>
+					<h2>Heads Up</h2>
 					<p>
 						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
 						support for CSS 3D transforms to see it in its full glory.
@@ -60,43 +80,130 @@
 
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside-->
+					</aside>
+				</section-->
+
+				<section data-background="http://media.emercedesbenz.com.s3.amazonaws.com/magazine/wp-content/uploads/mercedes-benz-73734064026.jpg">
+					<h2>
+						<span class="text-yellow-bg">Welcome to</span><br />
+						<span class="text-yellow-bg">Sprint 20 Review!</span></h2>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
+						<h1 class="talk-title">Copy order for logged-in user</h1>
+						<h3>name</h3>
+						<!--p>
 							Slides can be nested inside of other slides,
 							try pressing <a href="#" class="navigate-down">down</a>.
 						</p>
 						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						</a-->
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+						<h2>Problem</h2>
+						<p>user logs in on menu page or checkout page and lose his shopping cart</p>
 					</section>
 					<section>
+						<h2>Solution</h2>
+						<p>duplicate an order (thanks, API!)</p>
+					</section>
+					<section>
+						<h2>Hack</h2>
+						<p>remove log-in from OCP</p>
+					</section>
+					<!--section>
 						<h2>Basement Level 2</h2>
 						<p>Cornify</p>
 						<a class="test" href="http://cornify.com">
 							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
 						</a>
-					</section>
-					<section>
+					</section-->
+					<!--section>
 						<h2>Basement Level 3</h2>
 						<p>That's it, time to go back up.</p>
 						<a href="#/2" class="image">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
 						</a>
+					</section-->
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1 class="talk-title">Trim down Utilitybelt</h1>
+						<h3>name</h3>
+					</section>
+					<section>
+						<h2>Problem</h2>
+						<p>300kb (!) of unused code</p>
+					</section>
+					<section data-background="http://media.giphy.com/media/B0yHMGZZLbBxS/giphy.gif">
+						<h2 style="display: inline-block; background-color: #000; font-size: 2.5em; margin-top: 4em;">kill it with fire!</h2>
+					</section>
+					<!--section>
+						<h2>Solution</h2>
+						<p>kill it with fire</p>
+					</section-->
+					<section>
+						<h2>Result</h2>
+						<p>87kb gzipped, serving shopping cart, login flow & order checkout logic</p>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1 class="talk-title">Version tag in page source</h1>
+						<h3>name</h3>
+					</section>
+					<section>
+						<h2>Hey, what is deployed on lab11?</h2>
+						<p>Solution: sha1 import on build stage</p>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1 class="talk-title">Order category events for GA</h1>
+						<h3>Piotr</h3>
+					</section>
+					<section>
+						<h2>problem</h2>
+						<p>we need to track order flow with GA.<br />The corresponding actions to track are nested deeply into different elements of ucb-client and utilitybelt</p>
+					</section>
+					<section>
+						<h2>solution</h2>
+						<p>provide all relevant info to GA<br />via Google Tag Manager Data Layer</p>
+					</section>
+					<section>
+						<h2>result</h2>
+						<p>events for order flow visible in GA</p>
+					</section>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h1 class="talk-title">GTM/GA - more tracking</h1>
+						<h3>Timur</h3>
+					</section>
+					<section>
+						<h3>Added some useful per-page stuff available in GTM</h3>
+					</section>
+					<section>
+						<h2>More events in GA</h2>
+					</section>
+					<section>
+						<h3>Basic ECommerce data sent to Google Analytics</h3>
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
+					<h2>solution</h2>
 					<p>
 						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
 					</p>
