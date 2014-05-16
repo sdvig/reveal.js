@@ -90,7 +90,7 @@
 				<section>
 					<section>
 						<h1 class="talk-title">Copy order for logged-in user</h1>
-						<h3>name</h3>
+						<h3>Pavel</h3>
 					</section>
 					<section>
 						<h2>Problem</h2>
@@ -221,6 +221,65 @@
 						</ul>
 					</section>
 				</section>
+
+				<!-- TALK #8 -->
+				<section>
+					<section>
+						<h1 class="talk-title">Route reversal</h1>
+						<h3>Tim</h3>
+					</section>
+					<section>
+						<h3>Problem:</h3>
+						<ul>
+							<li>Page URLs differ between countries, but we don't want to hardcode the differences</li>
+							<li>There are several URLs for one type of page, depending on the amount of information we have available</li>
+						</ul>
+					</section>
+					<section>
+						<pre>
+// DE restaurants
+/lieferservices-berlin/
+/lieferservices-berlin/10713/
+/lieferservices-berlin/10713/sushi-bestellen
+
+// AU restaurants
+/takeaway-sydney/
+/takeaway-sydney/ultimo/
+/takeaway-sydney/ultimo/sushi-delivery
+
+// DE menu
+/lieferservices-berlin/irgendein-lieferservice/1337
+
+// AU menu
+/takeaway-sydney/ultimo/some-restaurant/123
+/takeaway-sydney/some-restaurant/123
+						</pre>
+					</section>
+					<section>
+						<h3>Solution:</h3>
+						<ul>
+							<li>Automate parsing the routes, analyze structure, create functions that can fill in the details into our route URL definition</li>
+							<li>Find route that matches given data most closely, fill in data and return it</li>
+						</ul>
+					</section>
+					<section>
+						<pre>
+var routesManager = require('app/routes');
+routesManager.reverse('restaurantList', {
+	city: 'sydney',
+	category: 'sushi'
+}).url;
+>> '/takeaway-sydney/sushi-delivery'
+
+routesManager.reverse('restaurantList', {
+	city: 'sydney',
+	suburb: 'ultimo'
+}).url;
+>> '/takeaway-sydney/ultimo'
+						</pre>
+					</section>
+				</section>
+
 
 				<section data-background="http://media3.giphy.com/media/Kc3FsPX7MWtsQ/giphy.gif">
 					<h1>Thank you!</h1>
